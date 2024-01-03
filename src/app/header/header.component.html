@@ -1,15 +1,17 @@
 <header class="container mx-auto mb-1 px-1">
 
     <nav class="w-full flex justify-between items-center py-1 border-b-2 border-green_gb">
-        <div class="flex items-center -space-x-1">
-            <img class="h-14" src="../../assets/logo.png" alt="Gobar">
-            <a href="" class="text-3xl font-roundy-rainbows-italic">gobar</a>
+        <div>
+            <a routerLink="/" class="text-3xl font-roundy-rainbows-italic flex items-center -space-x-1"> 
+                <img class="h-14" src="../../assets/logo.png" alt="Gobar">
+                gobar
+            </a>
         </div>
         <div class="flex items-center space-x-5 font-semibold text-xl">
-            <a href="" class="hover:border-b-2 hover:border-b-greener duration-300">Home</a>
+            <a [routerLink]="['/']" class="hover:border-b-2 hover:border-b-greener duration-300">Home</a>
             <a href="#about_us" class="hover:border-b-2 hover:border-b-lime-700 duration-300">About Us</a>
             <a href="#contact_us" class="hover:border-b-2 hover:border-b-greener duration-300">Contact Us</a>
-            <a href=""
+            <a routerLink="/booking"
                 class="py-1 px-4 ring-1 ring-black hover:bg-green_gb hover:shadow-lg rounded-md duration-200">Book</a>
         </div>
     </nav>
