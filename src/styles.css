@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base{
+
+    @font-face {
+        font-family: "MOOD";
+        src: url('../src/assets/fonts/Good\ Mood.otf');
+    };
+
+    @font-face {
+        font-family: "Roundy Rainbows";
+        src: url('../src/assets/fonts/Roundy\ Rainbows.ttf');
+    }
+
+    @font-face {
+        font-family: "Roundy Italic";
+        src: url('../src/assets/fonts/Roundy\ Rainbows.ttf');
+    }
+};
