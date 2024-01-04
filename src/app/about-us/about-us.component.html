@@ -20,7 +20,7 @@
                 class="mb-4 text-4xl font-bold text-stone-100 text-center tracking-tight md:font-extrabold lg:leading-nonetext-white md:text-center lg:mb-7">
                 Sign up for our newsletter</h2>
 
-            <div
+            <div *ngIf="subSuccessMessage"
                 class="m-6 max-w-xl sm:mx-auto bg-green-300 border-t-4 border-green-600 rounded-b px-4 py-3 shadow-md text-green-900">
                 <div class="flex items-center">
                     <div class="py-1">
@@ -31,12 +31,12 @@
                         </svg>
                     </div>
                     <div>
-                        <p class="font-bold">Mensaje de Exito</p>
+                        <p class="font-bold">{{subSuccessMessage}}</p>
                     </div>
                 </div>
             </div>
 
-            <div
+            <div *ngIf="subErrorMessage"
                 class="m-6 max-w-xl sm:mx-auto bg-red-300 border-t-4 border-red-600 rounded-b px-4 py-3 shadow-md text-red-900">
                 <div class="flex items-center">
                     <div class="py-1">
@@ -47,13 +47,13 @@
                         </svg>
                     </div>
                     <div>
-                        <p class="font-bold">Mensaje de Error</p>
+                        <p class="font-bold">{{subErrorMessage}}</p>
                     </div>
                 </div>
             </div>
 
 
-            <form action="" class="mx-6 max-w-xl sm:mx-auto grid gap-6" method="POST">
+            <form class="mx-6 max-w-xl sm:mx-auto grid gap-6" [formGroup]="applyForm" (submit)="subscribeEmail()">
                 <div class="relative flex">
                     <div class="w-full">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
@@ -64,7 +64,7 @@
                                     d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                             </svg>
                         </div>
-                        <input type="name" id="nameSubscribe" name="nameSubscribe"
+                        <input type="name" id="full-name" formControlName="fullName"
                             class="block w-full px-3 py-4 pl-11 text-base text-gray-900 bg-white border border-gray-200 rounded-xl focus:border-gray-900 focus:outline-none"
                             placeholder="Enter your name" required>
                     </div>
@@ -72,7 +72,6 @@
 
                 <div class="flex">
                     <div class="w-full">
-                        <label for="emailSubscribe" class="hidden">Email address</label>
                         <div class="relative h-full">
                             <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
@@ -82,7 +81,7 @@
                                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
                                 </svg>
                             </div>
-                            <input type="email" id="emailSubscribe" name="emailSubscribe"
+                            <input type="email" id="email" formControlName="email"
                                 class="block w-full px-3 py-4 pl-11 text-base text-gray-900 bg-white border border-gray-200 rounded-xl focus:border-gray-900 focus:outline-none"
                                 placeholder="Enter your email" required>
                         </div>
